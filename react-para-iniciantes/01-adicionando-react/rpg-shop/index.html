@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio</title>
+  <!-- Link React -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <!-- Link React Dom -->
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- Link Babel -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <h1>React RPG Game</h1>
+  <p>Você deve criar uma interface onde o usuário possa comprar uma poção com o mercante, podendo adicionar, remover e realizar a compra da mesma, vendo a quantidade de poções e o valor total da compra</p>
+  <h2>Resolução:</h2>
+  <div id="app">
+    <script type="text/babel">
+
+      const Pocao = () => {
+        return (
+          <div>
+            <p>Poção de Cura</p>
+            <ul>
+              <li>Pontos de Regeneração: 250</li>
+              <li>Preço: 250</li>
+            </ul>
+          </div>
+        )
+      }
+
+      const Pedido = () => {
+        let quantidade = 0;
+        let valorTotal = 0;
+
+        const [contador, setContador] = React.useState(0);
+
+        function mudarContador(valor) {
+          if (valor === 'adicionar') {
+            setContador(() => contador + 1);
+          }
+          else if (valor === 'remover' && contador > 0) {
+            setContador(() => contador - 1);
+          }
+          else if (valor === 'comprar') {
+            setContador(() => contador - contador);
+          }
+        }
+
+        const BotaoAdicionar = () => {
+          return <button onClick={() => mudarContador('adicionar')}>Adicionar</button>
+        }
+
+        const BotaoRemover = () => {
+          return <button onClick={() => mudarContador('remover')}>Remover</button>
+        }
+
+        const BotaoComprar = () => {
+          return <button onClick={() => mudarContador('comprar')}>Comprar</button>
+        }
+
+        return (
+          <div>
+            Pedido:
+            <ul>
+              <li>Quantidade: {contador}</li>
+              <li>Valor Total: {contador * 250}</li>
+            </ul>
+            <div>
+              <BotaoAdicionar />
+              <BotaoComprar />
+              <BotaoRemover />
+            </div>
+          </div>
+        );
+      }
+
+      const App = () => {
+        return (
+          <div>
+            <Pocao />
+            <Pedido />
+          </div>
+        )
+      }
+
+      ReactDOM.render(<App />, document.getElementById('app'))
+    </script>
+  </div>
+
+</body>
+
+</html>

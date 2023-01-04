@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React para Iniciantes</title>
+  <!-- Link React -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <!-- Link React Dom -->
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- Link Babel -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <script type="text/babel">
+      const Button = () => {
+        return <button>Comprar</button>;
+      };
+
+      const MainNav = () => {
+        return (
+          <nav>
+            <a href="#">Link 1</a>
+            <Button />
+          </nav>
+        );
+      };
+
+      const App = () => {
+        return (
+          <div>
+            <MainNav />
+            <Button />
+          </div>
+        );
+      };
+
+      const Produtos = () => {
+        function handleClick(event) {
+          alert('Comprou: ' + event.target.innerText);
+        }
+
+        return (
+          <div>
+            <button onClick={handleClick}>Camisa</button>
+            <button onClick={handleClick}>Bermuda</button>
+          </div>
+        );
+      };
+
+      const Compras = () => {
+        // useState é um Hook que define uma variável reativa
+        const [count, setCount] = React.useState(0);
+
+        return (
+          <div>
+            <button onClick={() => setCount(count + 1)}>Comprar: {count}</button>
+            <p>Total: {count}</p>
+            <p>Preço: R$ {count * 250}</p>
+          </div>
+        );
+      };
+    </script>
+  </div>
+</body>
+
+</html>
