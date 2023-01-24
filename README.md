@@ -12,7 +12,7 @@ O curso que estou fazendo no momento é o [**React Completo**](https://www.origa
 - Formulários com React ✅
 - CSS com React ✅
 - React Router ✅
-- React Challenge → [![React Challenge Link]](https://www.github.com/mographllocode) ⏳
+- React Challenge → [Access Repo](https://www.github.com/mographllocode) ⏳
 - PropTypes, Lazy e Suspense, Memo... ⏳
 - Projeto completo (DOGS) ⏳
 
