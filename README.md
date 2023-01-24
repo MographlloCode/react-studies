@@ -9,8 +9,8 @@ O curso que estou fazendo no momento é o [**React Completo**](https://www.origa
 - O que é o React e Básico do Javascript ✅
 - Criação do aplicativo, JSX e Básicos ✅
 - React Hooks (Nativos e Personalizados) ✅
-- Formulários com React ⏳
-- CSS com React ⏳
+- Formulários com React ✅
+- CSS com React ✅
 - React Router ⏳
 - PropTypes, Lazy e Suspense, Memo... ⏳
 - Projeto completo (DOGS) ⏳
